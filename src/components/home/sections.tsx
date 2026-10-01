@@ -16,7 +16,7 @@ export function MobileHero() {
       <h1 className="relative mt-2.5 mb-3 text-[34px] leading-[1.22] font-black tracking-[-0.03em]">
         너희는
         <br />
-        세상의 <mark className="bg-[linear-gradient(transparent_60%,var(--color-brand-yellow)_60%)] text-inherit">빛</mark>이라
+        세상의 <span className="text-brand-blue">빛</span>이라
       </h1>
       <p className="relative mb-5 max-w-[24ch] text-sm text-sub">{site.name}는 {site.slogan}</p>
       <div className="relative flex gap-2">
