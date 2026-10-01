@@ -35,7 +35,7 @@ export default async function WorshipPage() {
 
         <section className="grid gap-4">
           <h2 className="font-en text-2xl font-extrabold lg:text-4xl">
-            School<small className="ml-2 font-sans text-sm font-medium text-sub lg:text-base">주일학교</small>
+            New Generation<small className="ml-2 font-sans text-sm font-medium text-sub lg:text-base">다음세대</small>
           </h2>
           <div className="overflow-x-auto rounded-[22px] bg-white shadow-card">
             <table className="w-full min-w-[480px] text-left text-sm lg:text-base">

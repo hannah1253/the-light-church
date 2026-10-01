@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mark, Paper } from "@/components/brand";
+import { Paper } from "@/components/brand";
 import { btn, Container, PhotoPlaceholder, SectionTitle } from "@/components/ui";
 import { YouTubePlayer } from "@/components/youtube-player";
 import { dotDate, koDate, koTime, shortDate, youtubeUrl } from "@/lib/format";
@@ -11,7 +11,6 @@ import type { Bulletin, Department, Sermon, WorshipTime } from "@/lib/types";
 export function MobileHero() {
   return (
     <section className="relative overflow-hidden px-5 pt-4 pb-8 lg:hidden">
-      <Mark className="absolute top-5 -right-8 w-[150px]" />
       <span className="eyebrow text-[11px] text-brand-blue">{site.verse.ref}</span>
       <h1 className="relative mt-2.5 mb-3 text-[34px] leading-[1.22] font-black tracking-[-0.03em]">
         너희는
@@ -123,7 +122,7 @@ export function Worship({ times }: { times: WorshipTime[] }) {
               className={`flex min-h-80 flex-col gap-1 rounded-[22px] px-6.5 py-7 ${t.highlight ? "bg-navy text-cream" : "bg-white shadow-card"}`}
             >
               <span className={`eyebrow ${t.highlight ? "text-brand-yellow" : "text-brand-blue"}`}>
-                {t.kind === "school" ? "SCHOOL" : (DAY_EN[t.day_label] ?? t.day_label)}
+                {t.kind === "school" ? "NEW GENERATION" : (DAY_EN[t.day_label] ?? t.day_label)}
               </span>
               <h3 className="mt-2.5 text-[22px] font-bold tracking-tight">{t.name}</h3>
               <span className={`mt-auto font-en text-5xl leading-tight font-bold tabular-nums ${t.highlight ? "" : "text-navy"}`}>{t.time}</span>
@@ -161,17 +160,17 @@ export function Pastor() {
   );
 }
 
-/* 주일학교: 모바일은 작은 타일, 데스크톱은 사진 카드 */
+/* 다음세대: 모바일은 작은 타일, 데스크톱은 사진 카드 */
 export function School({ departments }: { departments: Department[] }) {
   const tile = ["bg-[#fbefc9]", "bg-[#dce5f6]", "bg-navy text-cream"];
   return (
     <section className="border-t border-line">
       <Container className="grid gap-3.5 py-6.5 lg:gap-9 lg:py-[100px]">
         <div className="lg:hidden">
-          <SectionTitle en="School" ko="주일학교" />
+          <SectionTitle en="New Generation" ko="다음세대" />
         </div>
         <div className="hidden lg:block">
-          <SectionTitle en="School" ko="주일학교" description="다음 세대가 말씀 안에서 자라도록 함께 돕습니다." center />
+          <SectionTitle en="New Generation" ko="다음세대" description="다음 세대가 말씀 안에서 자라도록 함께 돕습니다." center />
         </div>
         <div className="grid grid-cols-3 gap-2 lg:hidden">
           {departments.map((d, i) => (

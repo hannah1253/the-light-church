@@ -20,8 +20,9 @@ src/
     page.tsx              홈
     about/                소개: church, people, location, worship
     sermons/              예배와 말씀: sunday, wednesday, special, [id](설교 상세)
-    school/[dept]/        주일학교: infant, elementary, youth
+    school/[dept]/        다음세대(N.G.): infant, elementary, youth
     news/bulletin/        교회주보 목록, [id](주보 상세)
+    newfamily/            새가족 등록 신청서
   components/
     layout/               헤더, 커튼 메뉴(drawer), 푸터
     home/sections.tsx     홈 화면 섹션들
@@ -38,8 +39,9 @@ supabase/
 ## Supabase 연결
 
 1. [supabase.com](https://supabase.com) 에서 새 프로젝트를 만듭니다. (Region: Northeast Asia (Seoul) 권장)
-2. 대시보드 **SQL Editor** 에서 아래 두 파일 내용을 순서대로 실행합니다.
+2. 대시보드 **SQL Editor** 에서 아래 파일 내용을 순서대로 실행합니다.
    - `supabase/migrations/20261001000000_init.sql` (테이블·권한·저장소)
+   - `supabase/migrations/20261001010000_new_family.sql` (새가족 등록 신청서)
    - `supabase/seed.sql` (예시 데이터, 선택)
 3. **Project Settings → API** 에서 URL 과 Publishable key 를 복사해 `.env.local` 을 만듭니다.
    ```bash

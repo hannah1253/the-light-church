@@ -27,6 +27,8 @@ export const fullAddress = `${site.address} ${site.addressDetail}`.trim();
 
 export type MenuItem = {
   en: string;
+  /** 공간이 좁을 때 쓰는 짧은 영문 (모바일 메뉴, 좁은 PC 화면) */
+  short?: string;
   ko: string;
   href: string;
   sub: { label: string; href: string }[];
@@ -55,8 +57,9 @@ export const MENU: MenuItem[] = [
     ],
   },
   {
-    en: "SCHOOL",
-    ko: "주일학교",
+    en: "NEW GENERATION",
+    short: "N.G.",
+    ko: "다음세대",
     href: "/school/infant",
     sub: [
       { label: "영아부", href: "/school/infant" },

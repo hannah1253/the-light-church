@@ -30,7 +30,16 @@ export function SiteHeader({ times }: { times: string[] }) {
                     aria-current={current?.en === m.en ? "true" : undefined}
                     className="flex items-baseline gap-1.5 rounded-full px-4 py-2.5 transition group-hover:bg-white group-hover:ring-1 group-hover:ring-line aria-[current]:text-brand-blue"
                   >
-                    <span className="font-en text-[15px] font-bold tracking-wide">{m.en}</span>
+                    <span className="font-en text-[15px] font-bold tracking-wide">
+                      {m.short ? (
+                        <>
+                          <span className="xl:hidden">{m.short}</span>
+                          <span className="hidden xl:inline">{m.en}</span>
+                        </>
+                      ) : (
+                        m.en
+                      )}
+                    </span>
                     <span className="text-xs text-sub">{m.ko}</span>
                   </Link>
                   <div className="invisible absolute top-full left-0 pt-2 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
@@ -51,10 +60,10 @@ export function SiteHeader({ times }: { times: string[] }) {
 
           <div className="flex items-center gap-2">
             <Link
-              href="/about/worship"
-              className="rounded-full bg-brand-yellow px-3.5 py-2.5 text-xs font-bold text-navy lg:px-5 lg:py-3 lg:text-sm"
+              href="/newfamily"
+              className="rounded-full bg-brand-yellow px-3.5 py-2.5 font-en text-xs font-bold tracking-wide text-navy lg:px-5 lg:py-3 lg:text-sm"
             >
-              예배안내
+              NEW FAMILY?
             </Link>
             {/* 모바일: 원형 버거 → 커튼 메뉴 */}
             <button

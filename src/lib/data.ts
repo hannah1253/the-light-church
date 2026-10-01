@@ -99,7 +99,7 @@ export async function getDepartments(): Promise<Department[]> {
     .from("departments")
     .select("slug, name, name_en, intro, age_range, time_label, place, photo_url, sort_order")
     .order("sort_order");
-  if (error) fail("주일학교", error);
+  if (error) fail("다음세대", error);
   return data ?? [];
 }
 

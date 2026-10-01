@@ -61,7 +61,7 @@ export function MenuDrawer({ open, onClose, times }: { open: boolean; onClose: (
                 >
                   <span className="flex items-baseline gap-2 lg:gap-4">
                     <span className="d-en font-en text-4xl leading-none font-extrabold tracking-tight lg:text-[76px]">
-                      {m.en}
+                      {m.short ?? m.en}
                     </span>
                     <span className="text-xs font-medium opacity-60 lg:text-[17px]">{m.ko}</span>
                   </span>
