@@ -1,3 +1,5 @@
+import { asset } from "@/lib/site";
+
 // 로고 심볼(펼쳐진 책 + 빛의 십자 여백)을 시안 1에서 따라 그린 path. 원본 SVG를 받으면 교체합니다.
 export function Mark({ className, yellow, blue }: { className?: string; yellow?: string; blue?: string }) {
   const y = yellow ?? "var(--mk-y, #f0ce74)";
@@ -17,7 +19,7 @@ export function Logo({ className = "", dark = false }: { className?: string; dar
   return (
     <span className={`logo ${dark ? "logo-dark" : ""} ${className}`} role="img" aria-label="빛으로교회 THE LIGHT CHURCH">
       <Mark />
-      <span className="wm" />
+      <span className="wm" style={{ "--wm": `url("${asset("/brand/wordmark.png")}")` } as React.CSSProperties} />
     </span>
   );
 }

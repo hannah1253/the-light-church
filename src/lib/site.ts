@@ -1,3 +1,7 @@
+// GitHub Pages 처럼 하위 경로에 배포될 때 public/ 파일 앞에 붙는 경로
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+export const asset = (path: string) => `${basePath}${path}`;
+
 // 교회 기본 정보. [대괄호] 항목은 확인 후 채워야 하는 자리입니다.
 export const site = {
   name: "빛으로교회",

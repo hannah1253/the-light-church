@@ -4,10 +4,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Paper } from "@/components/brand";
 import { btn, Container } from "@/components/ui";
-import { getBulletin } from "@/lib/data";
+import { getBulletin, getBulletins } from "@/lib/data";
 import { koDate } from "@/lib/format";
 
 export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const bulletins = await getBulletins(undefined, 500);
+  return bulletins.map((b) => ({ id: b.id }));
+}
 
 export async function generateMetadata({ params }: PageProps<"/news/bulletin/[id]">): Promise<Metadata> {
   const { id } = await params;

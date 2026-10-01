@@ -86,8 +86,8 @@ h3 {
   width: 69.64%;
   height: 76.25%;
   background: currentColor;
-  -webkit-mask: url("/brand/wordmark.png") center / 100% 100% no-repeat;
-  mask: url("/brand/wordmark.png") center / 100% 100% no-repeat;
+  -webkit-mask: var(--wm) center / 100% 100% no-repeat;
+  mask: var(--wm) center / 100% 100% no-repeat;
 }
 .logo-dark {
   color: var(--color-cream);

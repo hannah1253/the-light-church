@@ -3,11 +3,16 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui";
 import { YouTubePlayer } from "@/components/youtube-player";
-import { getSermon } from "@/lib/data";
+import { getSermon, getSermons } from "@/lib/data";
 import { dotDate, youtubeThumb, youtubeUrl } from "@/lib/format";
 import { SERMON_CATEGORIES } from "@/lib/types";
 
 export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const sermons = await getSermons(undefined, 500);
+  return sermons.map((s) => ({ id: s.id }));
+}
 
 export async function generateMetadata({ params }: PageProps<"/sermons/[id]">): Promise<Metadata> {
   const { id } = await params;
