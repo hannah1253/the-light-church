@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SocialLinks } from "@/components/social-links";
 import { getWorshipTimes } from "@/lib/data";
 import { koTime } from "@/lib/format";
 import { fullAddress, MENU, site } from "@/lib/site";
@@ -30,6 +31,7 @@ export async function SiteFooter() {
             {fullAddress} · {site.phone}
             <br />© {new Date().getFullYear()} The Light Church
           </p>
+          <SocialLinks />
         </div>
         <nav
           aria-label="푸터 메뉴"

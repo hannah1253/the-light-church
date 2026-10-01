@@ -17,9 +17,9 @@ export const site = {
   verse: { ref: "MATTHEW 5:14", text: "너희는 세상의 빛이라" },
   slogan: "말씀의 빛 안에서 함께 걷는 공동체입니다.",
   sns: {
+    instagram: "https://www.instagram.com/thelightchurch_seongnam/",
     youtube: "https://www.youtube.com/@성남빛으로교회",
-    instagram: "",
-    kakao: "",
+    blog: "", // 링크가 생기면 입력 (비어 있으면 '준비 중'으로 표시)
   },
 } as const;
 

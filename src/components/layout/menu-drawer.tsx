@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Logo } from "@/components/brand";
-import { fullAddress, MENU, site } from "@/lib/site";
+import { SocialLinks } from "@/components/social-links";
+import { fullAddress, MENU } from "@/lib/site";
 
 export function MenuDrawer({ open, onClose, times }: { open: boolean; onClose: () => void; times: string[] }) {
   const [expanded, setExpanded] = useState<number | null>(null);
@@ -95,7 +96,7 @@ export function MenuDrawer({ open, onClose, times }: { open: boolean; onClose: (
         </ul>
 
         <div className="d-foot flex items-end justify-between gap-3 border-t border-cream/15 px-2 pt-4 text-[11px] lg:pt-5 lg:text-sm">
-          <div className="grid text-cream/70">
+          <div className="grid min-w-0 text-cream/70">
             {times.map((t, i) =>
               i === 0 ? (
                 <b key={t} className="text-xs text-brand-yellow lg:text-base">
@@ -107,19 +108,7 @@ export function MenuDrawer({ open, onClose, times }: { open: boolean; onClose: (
             )}
             <span>{fullAddress}</span>
           </div>
-          <div className="flex gap-1.5">
-            {site.sns.youtube && (
-              <a
-                href={site.sns.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="grid size-8 place-items-center rounded-full font-en text-[10px] font-bold ring-1 ring-cream/30 lg:size-11 lg:text-[13px]"
-                aria-label="유튜브"
-              >
-                YT
-              </a>
-            )}
-          </div>
+          <SocialLinks size="sm" />
         </div>
       </div>
     </nav>
